@@ -1,8 +1,22 @@
 package cse360assign2;
 
+/**
+ * 
+ * @author Jack Bryant
+ * Class ID: 70641
+ * Assignment Number: 2
+ * 
+ * The AddingMachine class creates an AddingMachine object, as well
+ * as the methods which allow values to be added and subtracted from a 
+ * running total. The program also keeps track of the past operations and 
+ * can print them (in chronologic order) in a string
+ *
+ */
+
 public class AddingMachine
 {
 	private int total;
+	private String opHistory = "0";
 	
 	/**
 	 * The AddingMachine constructor creates an AddingMachine object
@@ -21,7 +35,7 @@ public class AddingMachine
 	 */
 	public int getTotal () 
 	{
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -32,7 +46,8 @@ public class AddingMachine
 	 */
 	public void add (int value) 
 	{
-		
+		total = total + value;
+		opHistory = opHistory + " + " + Integer.toString(value);
 	}
 	
 	/**
@@ -43,7 +58,8 @@ public class AddingMachine
 	 */
 	public void subtract (int value) 
 	{
-		
+		total = total - value;
+		opHistory = opHistory + " - " + Integer.toString(value);
 	}
 	
 	/**
@@ -55,7 +71,7 @@ public class AddingMachine
 	 */
 	public String toString () 
 	{
-		return "";
+		return opHistory;
 	}
 
 	/**
@@ -64,6 +80,7 @@ public class AddingMachine
 	 */
 	public void clear() 
 	{
-	
+		total = 0;
+		opHistory = "0";
 	}
 }
